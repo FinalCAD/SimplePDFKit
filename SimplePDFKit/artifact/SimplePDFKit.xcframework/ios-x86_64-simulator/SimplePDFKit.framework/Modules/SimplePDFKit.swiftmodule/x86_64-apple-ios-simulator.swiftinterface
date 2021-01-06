@@ -1,0 +1,185 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SimplePDFKit
+import CoreGraphics
+import Foundation
+@_exported import SimplePDFKit
+import Swift
+import UIKit
+@objc final public class SimplePDFViewController : UIKit.UIViewController {
+  final public var scrollView: UIKit.UIScrollView!
+  final public var overlayView: UIKit.UIView!
+  final public var contentView: UIKit.UIView!
+  final public var page: SimplePDFKit.PDFPage! {
+    get
+    set
+  }
+  weak final public var delegate: SimplePDFKit.SimplePDFViewControllerDelegate?
+  final public var minRenderDelay: Foundation.TimeInterval {
+    get
+    set
+  }
+  final public var backgroundColor: UIKit.UIColor {
+    get
+    set
+  }
+  @objc dynamic public init()
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc override final public func loadView()
+  @objc override final public func didMove(toParent parent: UIKit.UIViewController?)
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc override final public func viewDidLayoutSubviews()
+  @objc override final public func traitCollectionDidChange(_ previous: UIKit.UITraitCollection?)
+  final public func forceRender()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+extension SimplePDFViewController : UIKit.UIScrollViewDelegate {
+  @objc final public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @objc final public func scrollViewDidZoom(_ scrollView: UIKit.UIScrollView)
+  @objc final public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @objc final public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @objc final public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
+  @objc final public func scrollViewDidEndZooming(_ scrollView: UIKit.UIScrollView, with view: UIKit.UIView?, atScale scale: CoreGraphics.CGFloat)
+  @objc final public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+}
+extension CGVector {
+  public var length: CoreGraphics.CGFloat {
+    get
+  }
+  public var angle: CoreGraphics.CGFloat {
+    get
+  }
+  public init(angle: CoreGraphics.CGFloat, length: CoreGraphics.CGFloat)
+  public init(_ point: CoreGraphics.CGPoint)
+  public init(_ size: CoreGraphics.CGSize)
+  public func map(_ transform: (CoreGraphics.CGFloat) throws -> CoreGraphics.CGFloat) rethrows -> CoreGraphics.CGVector
+  public func clamped(to newLength: CoreGraphics.CGFloat) -> CoreGraphics.CGVector
+  prefix public static func - (vector: CoreGraphics.CGVector) -> CoreGraphics.CGVector
+  public static func + (lhs: CoreGraphics.CGVector, rhs: CoreGraphics.CGVector) -> CoreGraphics.CGVector
+  public static func += (lhs: inout CoreGraphics.CGVector, rhs: CoreGraphics.CGVector)
+  public static func - (lhs: CoreGraphics.CGVector, rhs: CoreGraphics.CGVector) -> CoreGraphics.CGVector
+  public static func -= (lhs: inout CoreGraphics.CGVector, rhs: CoreGraphics.CGVector)
+  public static func * (vector: CoreGraphics.CGVector, scale: CoreGraphics.CGSize) -> CoreGraphics.CGVector
+  public static func * (scale: CoreGraphics.CGSize, vector: CoreGraphics.CGVector) -> CoreGraphics.CGVector
+  public static func *= (vector: inout CoreGraphics.CGVector, scale: CoreGraphics.CGSize)
+  public static func / (vector: CoreGraphics.CGVector, scale: CoreGraphics.CGSize) -> CoreGraphics.CGVector
+  public static func /= (vector: inout CoreGraphics.CGVector, scale: CoreGraphics.CGSize)
+  public static func * (vector: CoreGraphics.CGVector, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGVector
+  public static func * (scale: CoreGraphics.CGFloat, vector: CoreGraphics.CGVector) -> CoreGraphics.CGVector
+  public static func *= (vector: inout CoreGraphics.CGVector, scale: CoreGraphics.CGFloat)
+  public static func / (vector: CoreGraphics.CGVector, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGVector
+  public static func /= (vector: inout CoreGraphics.CGVector, scale: CoreGraphics.CGFloat)
+}
+extension CGPoint {
+  public init(_ vector: CoreGraphics.CGVector)
+  public init(_ size: CoreGraphics.CGSize)
+  public func map(_ transform: (CoreGraphics.CGFloat) throws -> CoreGraphics.CGFloat) rethrows -> CoreGraphics.CGPoint
+  prefix public static func - (point: CoreGraphics.CGPoint) -> CoreGraphics.CGPoint
+  public static func - (lhs: CoreGraphics.CGPoint, rhs: CoreGraphics.CGPoint) -> CoreGraphics.CGVector
+  public static func + (point: CoreGraphics.CGPoint, offset: CoreGraphics.CGVector) -> CoreGraphics.CGPoint
+  public static func += (point: inout CoreGraphics.CGPoint, offset: CoreGraphics.CGVector)
+  public static func - (point: CoreGraphics.CGPoint, offset: CoreGraphics.CGVector) -> CoreGraphics.CGPoint
+  public static func -= (point: inout CoreGraphics.CGPoint, offset: CoreGraphics.CGVector)
+  public static func * (point: CoreGraphics.CGPoint, scale: CoreGraphics.CGSize) -> CoreGraphics.CGPoint
+  public static func * (scale: CoreGraphics.CGSize, point: CoreGraphics.CGPoint) -> CoreGraphics.CGPoint
+  public static func *= (point: inout CoreGraphics.CGPoint, scale: CoreGraphics.CGSize)
+  public static func / (point: CoreGraphics.CGPoint, scale: CoreGraphics.CGSize) -> CoreGraphics.CGPoint
+  public static func /= (point: inout CoreGraphics.CGPoint, scale: CoreGraphics.CGSize)
+  public static func * (point: CoreGraphics.CGPoint, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGPoint
+  public static func * (scale: CoreGraphics.CGFloat, point: CoreGraphics.CGPoint) -> CoreGraphics.CGPoint
+  public static func *= (point: inout CoreGraphics.CGPoint, scale: CoreGraphics.CGFloat)
+  public static func / (point: CoreGraphics.CGPoint, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGPoint
+  public static func /= (point: inout CoreGraphics.CGPoint, scale: CoreGraphics.CGFloat)
+}
+public protocol SimplePDFViewControllerDelegate : AnyObject {
+  func pdfZoomed(to scale: CoreGraphics.CGFloat)
+  func pdfFinishedLoading()
+}
+extension CGSize {
+  public static var one: CoreGraphics.CGSize {
+    get
+  }
+  public var min: CoreGraphics.CGFloat {
+    get
+  }
+  public var max: CoreGraphics.CGFloat {
+    get
+  }
+  public init(_ point: CoreGraphics.CGPoint)
+  public init(_ vector: CoreGraphics.CGVector)
+  public func map(_ transform: (CoreGraphics.CGFloat) throws -> CoreGraphics.CGFloat) rethrows -> CoreGraphics.CGSize
+  public static func + (lhs: CoreGraphics.CGSize, rhs: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public static func += (lhs: inout CoreGraphics.CGSize, rhs: CoreGraphics.CGSize)
+  public static func - (lhs: CoreGraphics.CGSize, rhs: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public static func -= (lhs: inout CoreGraphics.CGSize, rhs: CoreGraphics.CGSize)
+  public static func * (lhs: CoreGraphics.CGSize, rhs: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public static func *= (lhs: inout CoreGraphics.CGSize, rhs: CoreGraphics.CGSize)
+  public static func / (lhs: CoreGraphics.CGSize, rhs: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public static func /= (lhs: inout CoreGraphics.CGSize, rhs: CoreGraphics.CGSize)
+  public static func * (size: CoreGraphics.CGSize, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGSize
+  public static func * (scale: CoreGraphics.CGFloat, size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public static func *= (size: inout CoreGraphics.CGSize, scale: CoreGraphics.CGFloat)
+  public static func / (size: CoreGraphics.CGSize, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGSize
+  public static func /= (size: inout CoreGraphics.CGSize, scale: CoreGraphics.CGFloat)
+}
+final public class PDFDocument {
+  convenience public init(at url: Foundation.URL) throws
+  public init(atPath path: Swift.String) throws
+  @objc deinit
+  final public func page(_ pageNumber: Swift.Int) throws -> SimplePDFKit.PDFPage
+}
+@_hasMissingDesignatedInitializers final public class PDFPage {
+  final public let document: SimplePDFKit.PDFDocument
+  final public let size: CoreGraphics.CGSize
+  @objc deinit
+  final public func render(in bitmap: SimplePDFKit.PDFBitmap, bounds: CoreGraphics.CGRect)
+}
+final public class PDFBitmap {
+  final public let context: CoreGraphics.CGContext
+  final public var size: CoreGraphics.CGSize {
+    get
+  }
+  public init(referencing context: CoreGraphics.CGContext) throws
+  @objc deinit
+}
+public enum SimplePDFError : Swift.Error {
+  case invalidPageNumber
+  public static func == (a: SimplePDFKit.SimplePDFError, b: SimplePDFKit.SimplePDFError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum PDFiumError : Swift.Int, Swift.Error {
+  case success
+  case unknownError
+  case fileNotFound
+  case dataCorrupted
+  case incorrectPassword
+  case unsupportedSecurityScheme
+  case pageNotFound
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CGRect {
+  public static func * (rect: CoreGraphics.CGRect, scale: CoreGraphics.CGSize) -> CoreGraphics.CGRect
+  public static func * (scale: CoreGraphics.CGSize, rect: CoreGraphics.CGRect) -> CoreGraphics.CGRect
+  public static func *= (rect: inout CoreGraphics.CGRect, scale: CoreGraphics.CGSize)
+  public static func / (rect: CoreGraphics.CGRect, scale: CoreGraphics.CGSize) -> CoreGraphics.CGRect
+  public static func /= (rect: inout CoreGraphics.CGRect, scale: CoreGraphics.CGSize)
+  public static func * (rect: CoreGraphics.CGRect, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGRect
+  public static func * (scale: CoreGraphics.CGFloat, rect: CoreGraphics.CGRect) -> CoreGraphics.CGRect
+  public static func *= (rect: inout CoreGraphics.CGRect, scale: CoreGraphics.CGFloat)
+  public static func / (rect: CoreGraphics.CGRect, scale: CoreGraphics.CGFloat) -> CoreGraphics.CGRect
+  public static func /= (rect: inout CoreGraphics.CGRect, scale: CoreGraphics.CGFloat)
+}
+extension SimplePDFKit.SimplePDFError : Swift.Equatable {}
+extension SimplePDFKit.SimplePDFError : Swift.Hashable {}
+extension SimplePDFKit.PDFiumError : Swift.Equatable {}
+extension SimplePDFKit.PDFiumError : Swift.Hashable {}
+extension SimplePDFKit.PDFiumError : Swift.RawRepresentable {}

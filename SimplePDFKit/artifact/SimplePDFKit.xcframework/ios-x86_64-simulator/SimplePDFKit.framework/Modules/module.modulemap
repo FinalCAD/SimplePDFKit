@@ -1,0 +1,11 @@
+framework module SimplePDFKit {
+  umbrella header "SimplePDFKit.h"
+
+  export *
+  module * { export * }
+}
+
+module SimplePDFKit.Swift {
+    header "SimplePDFKit-Swift.h"
+    requires objc
+}

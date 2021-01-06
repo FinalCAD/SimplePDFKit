@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EA9B88425A62F9600073708 /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9B88025A62F9600073708 /* CGVector.swift */; };
+		4EA9B88525A62F9600073708 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9B88125A62F9600073708 /* CGSize.swift */; };
+		4EA9B88625A62F9600073708 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9B88225A62F9600073708 /* CGPoint.swift */; };
+		4EA9B88725A62F9600073708 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9B88325A62F9600073708 /* CGRect.swift */; };
 		953C237A20F0132500BE51F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C237920F0132500BE51F7 /* AppDelegate.swift */; };
 		953C237C20F0132500BE51F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C237B20F0132500BE51F7 /* ViewController.swift */; };
 		953C237F20F0132500BE51F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953C237D20F0132500BE51F7 /* Main.storyboard */; };
@@ -22,7 +26,6 @@
 		9550E0E420F2DCC300921387 /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9550E0E320F2DCC300921387 /* ViewControllerDelegate.swift */; };
 		95A58658222DD1A9006B2BE3 /* libpdfium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A58657222DD1A9006B2BE3 /* libpdfium.a */; };
 		B986D7662481F50B0000C54A /* TaskScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B986D7652481F50B0000C54A /* TaskScheduler.swift */; };
-		B9B562022398780A00E2A0F3 /* CGeometry in Frameworks */ = {isa = PBXBuildFile; productRef = B9B562012398780A00E2A0F3 /* CGeometry */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4EA9B88025A62F9600073708 /* CGVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
+		4EA9B88125A62F9600073708 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		4EA9B88225A62F9600073708 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		4EA9B88325A62F9600073708 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		953C237720F0132500BE51F7 /* SimplePDFExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePDFExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953C237920F0132500BE51F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		953C237B20F0132500BE51F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9B562022398780A00E2A0F3 /* CGeometry in Frameworks */,
 				95A58658222DD1A9006B2BE3 /* libpdfium.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EA9B87525A62F5700073708 /* CGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				4EA9B88225A62F9600073708 /* CGPoint.swift */,
+				4EA9B88325A62F9600073708 /* CGRect.swift */,
+				4EA9B88125A62F9600073708 /* CGSize.swift */,
+				4EA9B88025A62F9600073708 /* CGVector.swift */,
+			);
+			path = CGeometry;
+			sourceTree = "<group>";
+		};
 		953C237820F0132500BE51F7 /* SimplePDFExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +147,7 @@
 				954CFC0020E9B1180014E02F /* ViewController.swift */,
 				9550E0E320F2DCC300921387 /* ViewControllerDelegate.swift */,
 				954CFBEF20E9AEC20014E02F /* SimplePDFKit.h */,
+				4EA9B87525A62F5700073708 /* CGeometry */,
 				954CFBF020E9AEC20014E02F /* Info.plist */,
 			);
 			path = SimplePDFKit;
@@ -194,7 +212,6 @@
 			);
 			name = SimplePDFKit;
 			packageProductDependencies = (
-				B9B562012398780A00E2A0F3 /* CGeometry */,
 			);
 			productName = SimplePDFKit;
 			productReference = 954CFBEC20E9AEC20014E02F /* SimplePDFKit.framework */;
@@ -230,7 +247,6 @@
 			);
 			mainGroup = 954CFBE220E9AEC20014E02F;
 			packageReferences = (
-				B9B562002398780A00E2A0F3 /* XCRemoteSwiftPackageReference "CGeometry" */,
 			);
 			productRefGroup = 954CFBED20E9AEC20014E02F /* Products */;
 			projectDirPath = "";
@@ -279,8 +295,12 @@
 			files = (
 				B986D7662481F50B0000C54A /* TaskScheduler.swift in Sources */,
 				954CFC0220E9B1180014E02F /* ViewController.swift in Sources */,
+				4EA9B88425A62F9600073708 /* CGVector.swift in Sources */,
+				4EA9B88625A62F9600073708 /* CGPoint.swift in Sources */,
 				9550E0E420F2DCC300921387 /* ViewControllerDelegate.swift in Sources */,
+				4EA9B88525A62F9600073708 /* CGSize.swift in Sources */,
 				954CFBFD20E9AFA30014E02F /* PDFium.swift in Sources */,
+				4EA9B88725A62F9600073708 /* CGRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +502,7 @@
 		954CFBF520E9AEC20014E02F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -513,6 +534,7 @@
 		954CFBF620E9AEC20014E02F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -572,25 +594,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B9B562002398780A00E2A0F3 /* XCRemoteSwiftPackageReference "CGeometry" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/juliand665/CGeometry.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B9B562012398780A00E2A0F3 /* CGeometry */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B9B562002398780A00E2A0F3 /* XCRemoteSwiftPackageReference "CGeometry" */;
-			productName = CGeometry;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 954CFBE320E9AEC20014E02F /* Project object */;
 }
